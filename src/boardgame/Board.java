@@ -1,7 +1,5 @@
 package boardgame;
 
-import chess.pieces.Rook;
-
 public class Board {
 	private int rows;
 	private int columns;
