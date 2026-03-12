@@ -42,7 +42,7 @@ public class Bishop extends ChessPiece {
 		}
 
 		// se
-		bishopChurch.setValues(position.getRow() - 1, position.getColumn() + 1);
+		bishopChurch.setValues(position.getRow() + 1, position.getColumn() + 1);
 		while (getBoard().positionExists(bishopChurch) && !getBoard().thereIsAPiece(bishopChurch)) {
 			matriz[bishopChurch.getRow()][bishopChurch.getColumn()] = true;
 			bishopChurch.setValues(bishopChurch.getRow() +1, bishopChurch.getColumn() + 1);
@@ -60,6 +60,8 @@ public class Bishop extends ChessPiece {
 		if (getBoard().positionExists(bishopChurch) && isThereOpponentPiece(bishopChurch)) {
 			matriz[bishopChurch.getRow()][bishopChurch.getColumn()] = true;
 		}
+		
 		return matriz;
+		
 	    }
 }
