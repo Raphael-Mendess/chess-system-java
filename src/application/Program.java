@@ -12,7 +12,7 @@ import chess.ChessPosition;
 
 public class Program {
 	public static void main(String []args) {		
-		Scanner sc = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		ChessMatch chessMatch = new ChessMatch();
 		List<ChessPiece> capturedEnemies = new ArrayList<>();
 		
@@ -22,28 +22,34 @@ public class Program {
 				UI.printMatch(chessMatch, capturedEnemies);
 				System.out.println();
 				System.out.print("Source: ");
-				ChessPosition source = UI.readChessPosition(sc);
+				ChessPosition source = UI.readChessPosition(scanner);
 				
 				boolean [][] possibleMoves = chessMatch.possibleMoves(source);
 				UI.clearScreen();
 				UI.printBoard(chessMatch.getPieces(), possibleMoves);				
 				System.out.println();
 				System.out.print("Target: ");
-				ChessPosition target = UI.readChessPosition(sc);
+				ChessPosition target = UI.readChessPosition(scanner);
 				
 				ChessPiece capturedPiece = chessMatch.performChessMove(source,target);
 				
 				if(capturedPiece != null) {
 					capturedEnemies.add(capturedPiece);
 				}
+				
+				if(chessMatch.getPromoted() != null) {
+					System.out.print("Enter piece for promotion (B/N/Q/R): ");
+					String type = scanner.nextLine();
+					chessMatch.replacePromotedPiece(type);
+				}
 			}
 			catch(ChessException e) {
 				System.out.println(e.getMessage());
-				sc.nextLine();
+				scanner.nextLine();
 			}
 			catch(InputMismatchException e) {
 				System.out.println(e.getMessage());
-				sc.nextLine();
+				scanner.nextLine();
 			}
 			
 			UI.clearScreen();

@@ -76,7 +76,7 @@ public class Queen extends ChessPiece {
 			matriz[queen.getRow()][queen.getColumn()] = true;
 		}
 		// se
-		queen.setValues(position.getRow() - 1, position.getColumn() + 1);
+		queen.setValues(position.getRow() + 1, position.getColumn() + 1);
 		while (getBoard().positionExists(queen) && !getBoard().thereIsAPiece(queen)) {
 			matriz[queen.getRow()][queen.getColumn()] = true;
 			queen.setValues(queen.getRow() + 1, queen.getColumn() + 1);
