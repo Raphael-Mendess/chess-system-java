@@ -30,7 +30,6 @@ public class Queen extends ChessPiece {
 		if (getBoard().positionExists(queen) && isThereOpponentPiece(queen)) {
 			matriz[queen.getRow()][queen.getColumn()] = true;
 		}
-
 		// below
 		queen.setValues(position.getRow() + 1, position.getColumn());
 		while (getBoard().positionExists(queen) && !getBoard().thereIsAPiece(queen)) {
@@ -40,7 +39,6 @@ public class Queen extends ChessPiece {
 		if (getBoard().positionExists(queen) && isThereOpponentPiece(queen)) {
 			matriz[queen.getRow()][queen.getColumn()] = true;
 		}
-
 		// left
 		queen.setValues(position.getRow(), position.getColumn() - 1);
 		while (getBoard().positionExists(queen) && !getBoard().thereIsAPiece(queen)) {
@@ -50,7 +48,6 @@ public class Queen extends ChessPiece {
 		if (getBoard().positionExists(queen) && isThereOpponentPiece(queen)) {
 			matriz[queen.getRow()][queen.getColumn()] = true;
 		}
-
 		// right
 		queen.setValues(position.getRow(), position.getColumn() + 1);
 		while (getBoard().positionExists(queen) && !getBoard().thereIsAPiece(queen)) {
@@ -60,7 +57,6 @@ public class Queen extends ChessPiece {
 		if (getBoard().positionExists(queen) && isThereOpponentPiece(queen)) {
 			matriz[queen.getRow()][queen.getColumn()] = true;
 		}
-
 		// nw
 		queen.setValues(position.getRow() - 1, position.getColumn() - 1);
 		while (getBoard().positionExists(queen) && !getBoard().thereIsAPiece(queen)) {
@@ -70,7 +66,6 @@ public class Queen extends ChessPiece {
 		if (getBoard().positionExists(queen) && isThereOpponentPiece(queen)) {
 			matriz[queen.getRow()][queen.getColumn()] = true;
 		}
-
 		// ne
 		queen.setValues(position.getRow() - 1, position.getColumn() + 1);
 		while (getBoard().positionExists(queen) && !getBoard().thereIsAPiece(queen)) {
@@ -80,7 +75,6 @@ public class Queen extends ChessPiece {
 		if (getBoard().positionExists(queen) && isThereOpponentPiece(queen)) {
 			matriz[queen.getRow()][queen.getColumn()] = true;
 		}
-
 		// se
 		queen.setValues(position.getRow() - 1, position.getColumn() + 1);
 		while (getBoard().positionExists(queen) && !getBoard().thereIsAPiece(queen)) {
@@ -90,7 +84,6 @@ public class Queen extends ChessPiece {
 		if (getBoard().positionExists(queen) && isThereOpponentPiece(queen)) {
 			matriz[queen.getRow()][queen.getColumn()] = true;
 		}
-
 		// sw
 		queen.setValues(position.getRow() + 1, position.getColumn() - 1);
 		while (getBoard().positionExists(queen) && !getBoard().thereIsAPiece(queen)) {

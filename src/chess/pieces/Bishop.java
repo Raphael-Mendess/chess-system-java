@@ -29,8 +29,7 @@ public class Bishop extends ChessPiece {
 		}
 		if (getBoard().positionExists(bishopChurch) && isThereOpponentPiece(bishopChurch)) {
 			matriz[bishopChurch.getRow()][bishopChurch.getColumn()] = true;
-		}
-		
+		}		
 		// ne
 		bishopChurch.setValues(position.getRow() - 1, position.getColumn() + 1);
 		while (getBoard().positionExists(bishopChurch) && !getBoard().thereIsAPiece(bishopChurch)) {
@@ -40,7 +39,6 @@ public class Bishop extends ChessPiece {
 		if (getBoard().positionExists(bishopChurch) && isThereOpponentPiece(bishopChurch)) {
 			matriz[bishopChurch.getRow()][bishopChurch.getColumn()] = true;
 		}
-
 		// se
 		bishopChurch.setValues(position.getRow() + 1, position.getColumn() + 1);
 		while (getBoard().positionExists(bishopChurch) && !getBoard().thereIsAPiece(bishopChurch)) {
@@ -50,7 +48,6 @@ public class Bishop extends ChessPiece {
 		if (getBoard().positionExists(bishopChurch) && isThereOpponentPiece(bishopChurch)) {
 			matriz[bishopChurch.getRow()][bishopChurch.getColumn()] = true;
 		}
-
 		// sw
 		bishopChurch.setValues(position.getRow() + 1, position.getColumn() - 1);
 		while (getBoard().positionExists(bishopChurch) && !getBoard().thereIsAPiece(bishopChurch)) {
@@ -59,9 +56,7 @@ public class Bishop extends ChessPiece {
 		}
 		if (getBoard().positionExists(bishopChurch) && isThereOpponentPiece(bishopChurch)) {
 			matriz[bishopChurch.getRow()][bishopChurch.getColumn()] = true;
-		}
-		
+		}		
 		return matriz;
-		
-	    }
+		}
 }
