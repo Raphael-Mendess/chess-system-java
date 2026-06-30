@@ -21,7 +21,7 @@ public class Knight extends ChessPiece {
 		return pieceObject == null || pieceObject.getColor() != getColor();
 	}
 
-	@Override //This was hard working kkkkkkkkkkk
+	@Override // This was hard working kkkkkkkkkkk
 	public boolean[][] possibleMoves() {
 
 		boolean[][] matrix = new boolean[getBoard().getRows()][getBoard().getColumns()];

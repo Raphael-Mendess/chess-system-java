@@ -7,7 +7,6 @@ import chess.ChessPiece;
 import chess.Color;
 
 public class King extends ChessPiece {
-
 	private ChessMatch chessMatch;
 
 	public King(SkateBoard board, Color color, ChessMatch chessMatch) {
@@ -84,13 +83,14 @@ public class King extends ChessPiece {
 			matrix[positionOfPiece.getRow()][positionOfPiece.getColumn()] = true;
 		}
 
-		// $specialmove castling
+		// specialmove castling
 		if (getMoveCount() == 0 && !chessMatch.getCheck()) {
 			// specialmove castling kingside rook
 			Position rookOne = new Position(position.getRow(), position.getColumn() + 3);
 			if (testRookCastling(rookOne)) {
 				Position x1 = new Position(position.getRow(), position.getColumn() + 1);
 				Position x2 = new Position(position.getRow(), position.getColumn() + 2);
+				
 				if (getBoard().piece(x1) == null && getBoard().piece(x2) == null) {
 					matrix[position.getRow()][position.getColumn() + 2] = true;
 				}
@@ -101,10 +101,11 @@ public class King extends ChessPiece {
 				Position x1 = new Position(position.getRow(), position.getColumn() - 1);
 				Position x2 = new Position(position.getRow(), position.getColumn() - 2);
 				Position x3 = new Position(position.getRow(), position.getColumn() - 3);
+				
 				if (getBoard().piece(x1) == null && getBoard().piece(x2) == null && getBoard().piece(x3) == null) {
 					matrix[position.getRow()][position.getColumn() - 2] = true;
 				}
-			}	
+			}
 		}
 		return matrix;
 	}

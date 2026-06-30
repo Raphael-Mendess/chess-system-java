@@ -21,6 +21,7 @@ public class Pawn extends ChessPiece {
 
 		if (getColor() == Color.WHITE) {
 			vanguardPawn.setValues(position.getRow() - 1, position.getColumn());
+			
 			if (getBoard().positionExists(vanguardPawn) && !getBoard().thereIsAPiece(vanguardPawn)) {
 				matrix[vanguardPawn.getRow()][vanguardPawn.getColumn()] = true;
 			}
@@ -40,6 +41,7 @@ public class Pawn extends ChessPiece {
 			if (getBoard().positionExists(vanguardPawn) && isThereOpponentPiece(vanguardPawn)) {
 				matrix[vanguardPawn.getRow()][vanguardPawn.getColumn()] = true;
 			}
+			
 			// specialmove En Passant White
 			if (position.getRow() == 3) {
 
@@ -58,20 +60,25 @@ public class Pawn extends ChessPiece {
 			}
 		} else {
 			vanguardPawn.setValues(position.getRow() + 1, position.getColumn());
+			
 			if (getBoard().positionExists(vanguardPawn) && !getBoard().thereIsAPiece(vanguardPawn)) {
 				matrix[vanguardPawn.getRow()][vanguardPawn.getColumn()] = true;
 			}
 			vanguardPawn.setValues(position.getRow() + 2, position.getColumn());
+			
 			Position x2 = new Position(position.getRow() + 1, position.getColumn());
+			
 			if (getBoard().positionExists(vanguardPawn) && !getBoard().thereIsAPiece(vanguardPawn)
 					&& getBoard().positionExists(x2) && !getBoard().thereIsAPiece(x2) && getMoveCount() == 0) {
 				matrix[vanguardPawn.getRow()][vanguardPawn.getColumn()] = true;
 			}
 			vanguardPawn.setValues(position.getRow() + 1, position.getColumn() - 1);
+			
 			if (getBoard().positionExists(vanguardPawn) && isThereOpponentPiece(vanguardPawn)) {
 				matrix[vanguardPawn.getRow()][vanguardPawn.getColumn()] = true;
 			}
 			vanguardPawn.setValues(position.getRow() + 1, position.getColumn() + 1);
+			
 			if (getBoard().positionExists(vanguardPawn) && isThereOpponentPiece(vanguardPawn)) {
 				matrix[vanguardPawn.getRow()][vanguardPawn.getColumn()] = true;
 			}
@@ -79,11 +86,13 @@ public class Pawn extends ChessPiece {
 			// specialmove En Passant Black
 			if (position.getRow() == 4) {
 				Position left = new Position(position.getRow(), position.getColumn() - 1);
+				
 				if (getBoard().positionExists(left) && isThereOpponentPiece(left)
 						&& getBoard().piece(left) == chessMatch.getEnPassantVulnerable()) {
 					matrix[left.getRow() + 1][left.getColumn()] = true; // FIX
 				}
 				Position right = new Position(position.getRow(), position.getColumn() + 1);
+				
 				if (getBoard().positionExists(right) && isThereOpponentPiece(right)
 						&& getBoard().piece(right) == chessMatch.getEnPassantVulnerable()) {
 
