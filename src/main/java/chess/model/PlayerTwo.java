@@ -1,6 +1,6 @@
 package chess.model;
 
-import com.chess.model.Player;
+import chess.model.Player;
 
 import jakarta.persistence.*;
 
